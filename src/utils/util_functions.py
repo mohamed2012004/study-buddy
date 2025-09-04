@@ -60,3 +60,53 @@ class QuizManager:
                 )
 
                 self.user_answers.append(user_answer)        
+               
+    def evaluate_quiz(self):
+        self.results=[]
+        
+        for i,(q,user_ans) in enumerate(zip(self.questions,self.user_answers)):
+            result_dict={
+                'quetion_number':i+1,
+                'question':q['question'],
+                 'question_type':q['type'],
+                 'user_answer':user_ans,
+                 'correct_answer':q['correct_answer'],
+                 'is_correct':False
+            }
+            if q['type']=='MCQ':
+                result_dict['options']=q['options']
+                result_dict['is_correct']=(user_ans==q['correct_answer'])
+            else:
+                result_dict['options']=[]
+                result_dict["is_correct"] = user_ans.strip().lower() == q['correct_answer'].strip().lower()      
+        self.results.append(result_dict)
+        
+    def generate_result_dataframe(self):
+        if not self.results:
+            return pd.DataFrame()
+        
+        return pd.DataFrame(self.results)                      
+    
+    def save_to_csv(self, filename_prefix="quiz_results"):
+        if not self.results:
+            st.warning("No results to save !!")
+            return None
+        
+        df = self.generate_result_dataframe()
+
+
+        from datetime import datetime
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        unique_filename = f"{filename_prefix}_{timestamp}.csv"
+
+        os.makedirs('results' , exist_ok=True)
+        full_path = os.path.join('results' , unique_filename)
+
+        try:
+            df.to_csv(full_path,index=False)
+            st.success("Results saved sucesfully....")
+            return full_path
+        
+        except Exception as e:
+            st.error(f"Failed to save results {e}")
+            return None

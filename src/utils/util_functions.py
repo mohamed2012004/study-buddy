@@ -1,91 +1,108 @@
 import os
-import streamlit as st 
+import streamlit as st
 import pandas as pd
 from src.generator.question_generator import QuestionGenerator
 
-# reset
+
 def rerun():
-    st.session_state['rerun_trigger'] = not st.session_state.get('rerun_trigger', False )
+    st.session_state['rerun_trigger'] = not st.session_state.get('rerun_trigger',False)
+
 
 class QuizManager:
     def __init__(self):
         self.questions=[]
         self.user_answers=[]
-        self.results=[]    
-    
-    def generate_question(self,generator :QuestionGenerator,topic:str,question_type:str,difficulty:str,num_questions:int):
+        self.results=[]
+
+    def generate_questions(self, generator:QuestionGenerator , topic:str , question_type:str , difficulty:str , num_questions:int):
         self.questions=[]
         self.user_answers=[]
         self.results=[]
-        
+
         try:
             for _ in range(num_questions):
                 if question_type == "Multiple Choice":
-                    question=generator.generate_mcq(topic,difficulty.lower())
-                    
+                    question = generator.generate_mcq(topic,difficulty.lower())
+
                     self.questions.append({
-                        'type': 'MCQ',
-                        'question': question.question,
-                        'options': question.options,
-                        'correct_answer': question.correct_answer})
+                        'type' : 'MCQ',
+                        'question' : question.question,
+                        'options' : question.options,
+                        'correct_answer': question.correct_answer
+                    })
+
                 else:
-                    question=generator.generate_fill_blank(topic,difficulty.lower())
+                    question = generator.generate_fill_blank(topic,difficulty.lower())
+
                     self.questions.append({
-                        'type': 'Fill in the Blank',
-                        'question': question.question,
-                        'correct_answer': question.correct_answer})    
-    
+                        'type' : 'Fill in the blank',
+                        'question' : question.question,
+                        'correct_answer': question.correct_answer
+                    })
         except Exception as e:
             st.error(f"Error generating question {e}")
             return False
         
-        return True    
+        return True
     
+
     def attempt_quiz(self):
-        for i,q in enumerate(self.questions):
+    # اعمل reset قبل ما تبدأ
+        self.user_answers = []
+
+        for i, q in enumerate(self.questions):
             st.markdown(f"**Question {i+1} : {q['question']}**")
-            
-            if q['type']=='MCQ':
-                #store user answer
+
+            if q['type'] == 'MCQ':
                 user_answer = st.radio(
-                    f"Select and answer for Question {i+1}",
+                    f"Select an answer for Question {i+1}",
                     q['options'],
+                    index=None,                    
                     key=f"mcq_{i}"
                 )
-                self.user_answers.append(user_answer)
-            else:
-                user_answer=st.text_input(
+
+                if user_answer is None:
+                    self.user_answers.append("")  
+                else:
+                    self.user_answers.append(user_answer)
+
+            else:  # Fill in the blank
+                user_answer = st.text_input(
                     f"Fill in the blank for Question {i+1}",
-                    key = f"fill_blank_{i}"
+                    key=f"fill_blank_{i}"
                 )
 
-                self.user_answers.append(user_answer)        
-               
+                self.user_answers.append(user_answer if user_answer else "")
+
+
     def evaluate_quiz(self):
         self.results=[]
-        
-        for i,(q,user_ans) in enumerate(zip(self.questions,self.user_answers)):
-            result_dict={
-                'quetion_number':i+1,
-                'question':q['question'],
-                 'question_type':q['type'],
-                 'user_answer':user_ans,
-                 'correct_answer':q['correct_answer'],
-                 'is_correct':False
+
+        for i, (q,user_ans) in enumerate(zip(self.questions,self.user_answers)):
+            result_dict = {
+                'question_number' : i+1,
+                'question': q['question'],
+                'question_type' :q["type"],
+                'user_answer' : user_ans,
+                'correct_answer' : q["correct_answer"],
+                "is_correct" : False
             }
-            if q['type']=='MCQ':
-                result_dict['options']=q['options']
-                result_dict['is_correct']=(user_ans==q['correct_answer'])
+
+            if q['type'] == 'MCQ':
+                result_dict['options'] = q['options']
+                result_dict["is_correct"] = user_ans == q["correct_answer"]
+
             else:
-                result_dict['options']=[]
-                result_dict["is_correct"] = user_ans.strip().lower() == q['correct_answer'].strip().lower()      
-        self.results.append(result_dict)
-        
+                result_dict['options'] = []
+                result_dict["is_correct"] = user_ans.strip().lower() == q['correct_answer'].strip().lower()
+
+            self.results.append(result_dict)
+
     def generate_result_dataframe(self):
         if not self.results:
             return pd.DataFrame()
         
-        return pd.DataFrame(self.results)                      
+        return pd.DataFrame(self.results)
     
     def save_to_csv(self, filename_prefix="quiz_results"):
         if not self.results:
@@ -110,3 +127,4 @@ class QuizManager:
         except Exception as e:
             st.error(f"Failed to save results {e}")
             return None
+            

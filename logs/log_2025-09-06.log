@@ -1,0 +1,50 @@
+2025-09-06 13:01:46,943 - WARNING - Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-09-06 13:04:10,429 - WARNING - Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-09-06 13:04:25,625 - INFO - Generating question for topic Machine Learning with difficulty medium
+2025-09-06 13:04:26,327 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 13:04:26,357 - INFO - Sucesfully parsed the question
+2025-09-06 13:04:26,358 - INFO - Generated a valid MCQ Question
+2025-09-06 13:04:26,358 - INFO - Generating question for topic Machine Learning with difficulty medium
+2025-09-06 13:04:26,673 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 13:04:26,675 - INFO - Sucesfully parsed the question
+2025-09-06 13:04:26,675 - INFO - Generated a valid MCQ Question
+2025-09-06 13:04:26,675 - INFO - Generating question for topic Machine Learning with difficulty medium
+2025-09-06 13:04:26,988 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 13:04:26,990 - INFO - Sucesfully parsed the question
+2025-09-06 13:04:26,990 - INFO - Generated a valid MCQ Question
+2025-09-06 13:04:26,990 - INFO - Generating question for topic Machine Learning with difficulty medium
+2025-09-06 13:04:27,437 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 13:04:27,439 - INFO - Sucesfully parsed the question
+2025-09-06 13:04:27,439 - INFO - Generated a valid MCQ Question
+2025-09-06 13:04:27,439 - INFO - Generating question for topic Machine Learning with difficulty medium
+2025-09-06 13:04:27,695 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 13:04:27,697 - INFO - Sucesfully parsed the question
+2025-09-06 13:04:27,697 - INFO - Generated a valid MCQ Question
+2025-09-06 13:05:18,382 - INFO - Generating question for topic Machine Learning with difficulty medium
+2025-09-06 13:05:18,884 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 13:05:18,885 - INFO - Sucesfully parsed the question
+2025-09-06 13:05:18,885 - INFO - Generated a valid MCQ Question
+2025-09-06 13:07:00,587 - INFO - Generating question for topic Machine Learning with difficulty medium
+2025-09-06 13:07:01,083 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 13:07:01,085 - INFO - Sucesfully parsed the question
+2025-09-06 13:07:01,085 - INFO - Generated a valid MCQ Question
+2025-09-06 13:07:20,658 - INFO - Generating question for topic Machine Learning with difficulty medium
+2025-09-06 13:07:21,085 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 13:07:21,087 - INFO - Sucesfully parsed the question
+2025-09-06 13:07:21,087 - INFO - Generated a valid MCQ Question
+2025-09-06 13:07:29,269 - INFO - Generating question for topic Machine Learning with difficulty medium
+2025-09-06 13:07:29,898 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 13:07:29,899 - INFO - Sucesfully parsed the question
+2025-09-06 13:07:29,899 - INFO - Generated a valid MCQ Question
+2025-09-06 13:07:29,899 - INFO - Generating question for topic Machine Learning with difficulty medium
+2025-09-06 13:07:30,290 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 13:07:30,292 - INFO - Sucesfully parsed the question
+2025-09-06 13:07:30,292 - INFO - Generated a valid MCQ Question
+2025-09-06 13:07:30,293 - INFO - Generating question for topic Machine Learning with difficulty medium
+2025-09-06 13:07:30,586 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 13:07:30,587 - INFO - Sucesfully parsed the question
+2025-09-06 13:07:30,588 - INFO - Generated a valid MCQ Question
+2025-09-06 13:07:30,588 - INFO - Generating question for topic Machine Learning with difficulty medium
+2025-09-06 13:07:31,033 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-06 13:07:31,035 - INFO - Sucesfully parsed the question
+2025-09-06 13:07:31,035 - INFO - Generated a valid MCQ Question

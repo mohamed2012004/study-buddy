@@ -6,6 +6,9 @@ from src.generator.question_generator import QuestionGenerator
 
 def rerun():
     st.session_state['rerun_trigger'] = not st.session_state.get('rerun_trigger',False)
+    
+    
+    
 
 
 class QuizManager:
@@ -23,6 +26,8 @@ class QuizManager:
             for _ in range(num_questions):
                 if question_type == "Multiple Choice":
                     question = generator.generate_mcq(topic,difficulty.lower())
+                    q_text = question.question
+                    correct = question.correct_answer
 
                     self.questions.append({
                         'type' : 'MCQ',
@@ -47,7 +52,6 @@ class QuizManager:
     
 
     def attempt_quiz(self):
-    # اعمل reset قبل ما تبدأ
         self.user_answers = []
 
         for i, q in enumerate(self.questions):

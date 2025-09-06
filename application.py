@@ -4,6 +4,8 @@ from dotenv import load_dotenv
 from src.utils.util_functions import *
 from src.generator.question_generator import QuestionGenerator
 load_dotenv()
+from src.halluicinate import check_hallucination,halluc_model_standalone
+
 
 
 def main():
@@ -72,6 +74,8 @@ def main():
     if st.session_state.quiz_submitted:
         st.header("Quiz Results")
         results_df = st.session_state.quiz_manager.generate_result_dataframe()
+        
+
 
         if not results_df.empty:
             correct_count = results_df["is_correct"].sum()
@@ -81,12 +85,14 @@ def main():
 
             for _, result in results_df.iterrows():
                 question_num = result['question_number']
+                is_hallu, conf, hallu_prob, not_hallu_prob = check_hallucination(result['question'], result['correct_answer'], halluc_model_standalone)
                 if result['is_correct']:
                     st.success(f"✅ Question {question_num} : {result['question']}")
                 else:
                     st.error(f"❌ Question {question_num} : {result['question']}")
                     st.write(f"Your answer : {result['user_answer']}")
                     st.write(f"Correct answer : {result['correct_answer']}")
+                st.info(f"Confidence Score : {round(conf * 100, 2)} %")    
                 
                 st.markdown("-------")
 

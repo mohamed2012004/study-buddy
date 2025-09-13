@@ -36,7 +36,7 @@ Study Buddy AI is an educational application built with **Streamlit** that allow
 
 ## Usage
 
-1. **Set up your API key** in your `.env` filethen Run the app locally:
+1. **Set up your API key** in your `.env` file then Run the app locally:
 
    ```bash
    streamlit run app.py

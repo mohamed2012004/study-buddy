@@ -1,3 +1,4 @@
 .env
 env
 LLMOPS_3.egg-info
+logs

@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from src.utils.util_functions import *
 from src.generator.question_generator import QuestionGenerator
 load_dotenv()
-from src.halluicinate import check_hallucination,halluc_model_standalone
+from src.utils.hallucinate import check_hallucination,halluc_model_standalone
 
 
 

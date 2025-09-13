@@ -18,9 +18,13 @@ Study Buddy AI is an educational application built with **Streamlit** that allow
 
 ---
 
+## [Demo](https://drive.google.com/file/d/1tkaI-hLyGhF62cAcBcYE6OQQoPQFiVGL/view?usp=sharing))
+
+---
+
 ## Architecture
 
-* **Frontend & App**: [Streamlit](https://streamlit.io/)
+* **Frontend & App**: Streamlit
 * **Backend Logic**: Python (within Streamlit app)
 * **Model / AI**: **Groq API** for question and answer generation
 * **Hallucination Detection**: Victara API
@@ -52,7 +56,7 @@ Study Buddy AI is an educational application built with **Streamlit** that allow
 <img width="1850" height="525" alt="Image" src="https://github.com/user-attachments/assets/b03416d1-c3f6-4afa-900f-f9249d5d3061" />
 
 * **CD (Continuous Deployment):** Deploy to production. Separation avoids broken builds reaching production and simplifies debugging.
-<img width="1848" height="753" alt="Image" src="https://github.com/user-attachments/assets/3ba60334-1509-489a-b763-144c1947d4a6" />
+<img width="1417" height="602" alt="Image" src="https://github.com/user-attachments/assets/c241150a-1de2-4e75-8cb3-43329c57a74c" />
 
 ### Why ArgoCD for CD?
 
@@ -60,6 +64,13 @@ Study Buddy AI is an educational application built with **Streamlit** that allow
 * **Automated sync & rollback**: Easy rollbacks and continuous sync with Kubernetes.
 * **Great visibility**: UI to monitor app health and deployments.
 * **Kubernetes-native**: Designed specifically for K8s.
+
+---
+
+
+## Structure
+
+
 
 ```
 .

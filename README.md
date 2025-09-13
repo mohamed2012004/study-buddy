@@ -24,7 +24,7 @@ Study Buddy AI is an educational application built with **Streamlit** that allow
 
 ## Architecture
 
-* **Frontend & App**: Streamlit
+* **Frontend & App**: streamlit
 * **Backend Logic**: Python (within Streamlit app)
 * **Model / AI**: **Groq API** for question and answer generation
 * **Hallucination Detection**: Victara API

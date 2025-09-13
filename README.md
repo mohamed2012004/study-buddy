@@ -2,7 +2,7 @@
 
 **Project Summary**
 
-Study Buddy AI is an educational application built with **Streamlit** that allows users to automatically generate quizzes based on topic, question type (multiple choice or fill-in-the-blanks), difficulty level, and number of questions. The app evaluates answers and provides a **score** along with a **confidence level** using the **Hallucinate Detector** from *Victara*. Results can be saved as CSV files.
+Study Buddy AI is an educational application built with **Streamlit** that allows users to automatically generate quizzes based on topic, question type (multiple choice or fill-in-the-blanks), difficulty level, and number of questions. The app evaluates answers and provides a **score** along with a **confidence level** using the **Hallucinate Detector** from *Vectara*. Results can be saved as CSV files.
 
 ---
 
@@ -11,7 +11,7 @@ Study Buddy AI is an educational application built with **Streamlit** that allow
 * Choose topic, difficulty level, and number of questions.
 * Two question types: **Multiple Choice (MCQ)** and **Fill-in-the-Blanks**.
 * Automatic quiz generation and instant results.
-* Score calculation with confidence level (Victara Hallucination Detector).
+* Score calculation with confidence level (Vectara Hallucination Detector).
 * Export results to **CSV**.
 * CI/CD pipeline: **Jenkins** for CI and **ArgoCD** for CD.
 * Deployable on cloud servers or Kubernetes clusters.

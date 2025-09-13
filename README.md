@@ -1,6 +1,6 @@
 # study-buddy
 
-
+```
 .
 ├── manifests/
 │   ├── deployment.yaml
@@ -37,5 +37,7 @@
 ├── kubectl
 ├── LICENSE
 ├── README.md
+
+```
 ├── requirements.txt
 └── setup.py

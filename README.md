@@ -37,7 +37,6 @@
 ├── kubectl
 ├── LICENSE
 ├── README.md
-
-```
 ├── requirements.txt
 └── setup.py
+```
